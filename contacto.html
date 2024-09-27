@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .factura-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .factura-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .factura-logo img {
+            width: 150px;
+        }
+
+        .factura-detalle {
+            margin-top: 20px;
+        }
+
+        .factura-detalle h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .factura-detalle p {
+            font-size: 1.2em;
+        }
+
+        .factura-productos {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .factura-productos th, .factura-productos td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .factura-total {
+            text-align: right;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .factura-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        .btn-imprimir {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="factura-container">
+        <div class="factura-header">
+            <div class="factura-logo">
+                <i class='bx bxs-cuboid bx-md mr-2 ml-2' ><span class="text-gray-500 ml-2">Easy</span>Shop</i>
+            </div>
+            <div class="factura-info">
+                <h2>Factura N°</h2>
+                <p id="fecha"></p>
+            </div>
+        </div>
+
+        <div class="factura-detalle">
+            <h2>Detalles del cliente</h2>
+            <p>Nombre del cliente: Juan Pérez</p>
+            <p>Correo: Info@example.com</p>
+        </div>
+        <div class=" m-4  flex-row" >
+            <div class=" "><p>21212</p></div><div></div>
+        </div>
+        <table class="factura-productos">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="factura-body">
+                <!-- Aquí se rellenarán los productos -->
+            </tbody>
+        </table>
+
+        <div class="factura-total">
+            Total a pagar: $<span id="total-pagar"></span>
+        </div>
+
+        <div id="btn-factura" class="btn-imprimir" onclick="imprimirFactura()">Imprimir Factura</div>
+
+        <div class="factura-footer">
+            <p>Gracias por su compra.</p>
+        </div>
+        
+        <script>
+            // Generar fecha actual
+            const fecha = new Date().toLocaleDateString();
+            document.getElementById('fecha').innerText = `Fecha: ${fecha}`;
+        
+            // Datos de ejemplo del carrito
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+            // Mostrar los productos en la tabla de la factura
+            const tbody = document.getElementById('factura-body');
+            let totalPagar = 0;
+        
+            carrito.forEach(producto => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${producto.nombre}</td>
+                    <td>${producto.cantidad}</td>
+                    <td>$${producto.precio}</td>
+                    <td>$${producto.cantidad * producto.precio}</td>
+                `;
+                tbody.appendChild(fila);
+        
+                totalPagar += producto.cantidad * producto.precio;
+            });
+        
+            // Mostrar el total a pagar
+            document.getElementById('total-pagar').innerText = totalPagar;
+        
+            // Función para imprimir la factura
+            function imprimirFactura() {
+                const btnFactura = document.getElementById('btn-factura');
+                btnFactura.style.display = 'none'; // Oculta el botón al imprimir
+                window.print(); // Abre el diálogo de impresión
+                btnFactura.style.display = 'block'; // Opcional: muestra el botón nuevamente después de imprimir
+            }
+        </script>
+        
+</body>
+</html>

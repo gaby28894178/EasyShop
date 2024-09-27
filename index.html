@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./assent/js/productos.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp1</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-300 flex flex-col mt-16">
+    <header class="bg-gradient-to-r from-purple-800 to-purple-600 text-white fixed top-0 left-0 w-full z-50 w-4">
+        <div class="flex items-center justify-between p-2">
+            <div class="flex items-center">
+                <a href="index.html" class="p-2">
+                    <i class='bx bx-home-alt-2 bx-lg text-white mt-1'>
+                        <span class="text-yellow-300">Easy</span>Shop                  
+                    </i>
+                </a>
+            </div>
+            
+            <div class="flex items-center md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class='bx bx-menu bx-lg'></i>
+                </button>
+            </div>
+            <nav class="hidden md:flex md:grow">
+                <ul class="flex justify-center space-x-6">
+                    <li><a class="hover:text-gray-300" href="index.html">Tiendas</a></li>
+                    <li><a class="hover:text-gray-300" href="productos.html">Productos</a></li>
+                    <li><a href="login.html" class="hover:text-gray-300">Login</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center">
+                <a href="carrito.html" class="p-2">
+                    <i class='bx bx-package p-2 bx-md'></i>
+                    <span id="contador"></span> 
+                    <i class='bx bx-cart-download bx-lg'></i>
+                </a>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="md:hidden hidden">
+            <ul class="flex flex-col space-y-2 p-2">
+                <li><a class="hover:text-gray-300" href="index.html">Tiendas</a></li>
+                <li><a class="hover:text-gray-300" href="productos.html">Productos</a></li>
+                <li><a href="#" class="hover:text-gray-300">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="flex-grow container mx-auto p-2 text-center mt-16">
+    <h1 class="text-3xl font-bold text-gray-800 ">Tienda fácil</h1>
+    <section class="bg-violet-600">
+        <h2 class="text-2xl text-gray-700 my-4">Donde Vender Es Más Simple</h2>
+    </section>
+    
+    <div id="contenedor-productos" class="flex flex-wrap justify-center p-4 m-4 sm:w-auto"></div>
+</main>
+
+<footer class="bg-gradient-to-r from-purple-600 to-purple-800 text-white text-center p-4">
+    <h2>El footer</h2>
+</footer>
+
+<script>
+   
+
+</script>
+
+</body>
+</html>

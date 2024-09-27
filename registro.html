@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-300 flex flex-col">
+    <header class="bg-gradient-to-r from-purple-800 to-purple-600 text-white fixed top-0 left-0 w-full mb-8 z-50">
+        <div class="flex items-center justify-between p-2">
+            <div class="flex items-center">
+                <a href="index.html" class="p-2">
+                    <i class="bx bx-home-alt-2 bx-lg text-white mt-1">
+                        <span class="text-pink-400">Easy</span>Shop
+                    </i>
+                </a>
+            </div>
+            <div class="flex items-center md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="bx bx-menu bx-lg"></i>
+                </button>
+            </div>
+            <nav class="hidden md:flex md:grow">
+                <ul class="flex justify-center space-x-6">
+                    <li>
+                        <a class="hover:text-gray-300" href="index.html">Tiendas</a>
+                    </li>
+                    <li><a class="hover:text-gray-300" href="productos.html">Productos</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Login</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center">
+                <a href="" class="p-2">
+                    <i class="bx bx-cart-download bx-lg"></i>
+                </a>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="md:hidden hidden">
+            <ul class="flex flex-col space-y-2 p-2">
+                <li>
+                    <a class="hover:text-gray-300" href="index.html">Tiendas</a>
+                </li>
+                <li><a class="hover:text-gray-300" href="productos.html">Productos</a></li>
+                <li><a href="#" class="hover:text-gray-300">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto p-2 text-center mt-14 ">
+        <section class="mt-12 ">
+            <article class="m-8">
+                
+                    <div class="m-auto mx-auto px-2 sm:px-0 x1:container  ">
+                        <div class="mx-auto h-full sm:w-max  ">
+                            <div class="m-auto py-2 ">
+                                <div class="-mx-4 mt-4 rounded-2xl border bg-gray-50 p-8 shadow-lg dark:border-gray-700 dark:bg-gray-800 sm:-mx-10 sm:p-10 bg-gradient-to-r from-purple-800 to-purple-600 text-white max-w-[10rem] ">
+                                    <h2 class="text-3xl font-bold text-center">Regístrese</h2>
+                                    <div class="mt-12 flex grid-cols-2 flex-wrap gap-6 sm:grid mb-4 ">
+                                        <button class="h-11 w-full rounded-full border border-gray-300/75 px-6 active:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-700 dark:hover:bg-gray-800">
+                                            <div class="mx-auto flex w-max items-center justify-center space-x-4">
+                                                <svg class="bi bi-google w-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"></path>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <button class="h-11 w-full rounded-full border border-gray-300/75 px-6 active:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-700 dark:hover:bg-gray-800">
+                                            <div class="mx-auto flex w-max items-center justify-center space-x-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5" viewBox="0 0 16 16">
+                                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <form action="" class="mt-10 space-y-8 dark:text-white">
+                                        <div>
+                                            <div class="relative before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:h-0.5 before:origin-right before:scale-x-0 before:bg-sky-400 before:transition before:duration-300 focus-within:before:origin-left focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 dark:before:bg-sky-800">
+                                                <input type="email" placeholder="Tu correo electrónico"
+                                                    class="w-full border-b border-gray-300 bg-transparent pb-3 outline-none transition invalid:border-red-400 dark:border-gray-600 dark:placeholder-gray-300
+                                                    bg-white 
+                                                    rounded-md
+                                                    border-red-400
+                                                    border-1
+                                                    
+                                                    " />
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end">
+                                            <div class="relative my-2 w-full before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:h-0.5 before:origin-right before:scale-x-0 before:bg-sky-400 before:transition before:duration-300 focus-within:before:origin-left focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 dark:before:bg-sky-800">
+                                                <input type="password" placeholder="Tu contraseña"
+                                                    class="w-full mb-5 border-b border-gray-300 bg-transparent pb-3 outline-none transition invalid:border-red-400 dark:border-gray-600 dark:placeholder-gray-300
+                                                    bg-white 
+                                                    rounded-md
+                                                    border-red-400
+                                                    border-1 "
+                                                    
+                                                    />
+                                            </div>
+                                            <div class="relative my-2 w-full before:absolute before:bottom-0 before:left-0 before:right-0 before:m-auto before:h-0.5 before:origin-right before:scale-x-0 before:bg-sky-400 before:transition before:duration-300 focus-within:before:origin-left focus-within:before:!scale-x-100 focus-within:invalid:before:bg-red-400 dark:before:bg-sky-800">
+                                                <input type="password" placeholder="Repite la contraseña"
+                                                    class="w-full border-b x4     border-gray-300 bg-transparent pb-3 outline-none transition invalid:border-red-400 dark:border-gray-600 dark:placeholder-gray-300 bg-white 
+                                                    rounded-md
+                                                    border-red-400
+                                                    border-1
+                                                    
+                                                    "
+                                                    
+                                                    />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button type="submit"
+                                                class="flex h-11 w-full items-center justify-center rounded-md bg-sky-500 px-6 py-3 transition hover:bg-sky-600 focus:bg-sky-600 active:bg-sky-800 dark:bg-sky-400">
+                                                <span class="text-base font-semibold text-white">Registrarse</span>
+                                            </button>
+                                            <button type="reset" class="-ml-3 w-max p-3">
+                                                <span class="text-sm tracking-wide text-sky-600 underline dark:text-sky-400">Ir a <a href="login.html" class="text-gray-500 hover:text-pink-300">Iniciar Sesión</a></span>
+                                            </button>
+                                        </div>
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+           
+            </article>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-purple-800 to-purple-600 text-white text-center p-4">
+        <h2>El footer</h2>
+    </footer>
+</body>
+
+</html>

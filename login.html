@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+
+    </style>
+  </head>
+  <body class="bg-gray-300 flex flex-col">
+    <header class="bg-gradient-to-r from-purple-800 to-purple-600 text-white fixed top-0 left-0 w-full z-50 w-4">
+      <div class="flex items-center justify-between p-2">
+          <div class="flex items-center">
+              <a href="index.html" class="p-2">
+                  <i class='bx bx-home-alt-2 bx-lg text-white mt-1'>
+                      <span class="text-yellow-300">Easy</span>Shop                  
+                  </i>
+              </a>
+          </div>
+          
+          <div class="flex items-center md:hidden">
+              <button id="menu-toggle" class="focus:outline-none">
+                  <i class='bx bx-menu bx-lg'></i>
+              </button>
+          </div>
+          <nav class="hidden md:flex md:grow">
+              <ul class="flex justify-center space-x-6">
+                  <li><a class="hover:text-gray-300" href="index.html">Tiendas</a></li>
+                  <li><a class="hover:text-gray-300" href="productos.html">Productos</a></li>
+                  <li><a href="login.html" class="hover:text-gray-300">Login</a></li>
+              </ul>
+          </nav>
+          <div class="flex items-center">
+              <a href="carrito.html" class="p-2">
+                  <!-- <i class='bx bx-package p-2 bx-sm'></i>
+                  <span id="contador"></span> 
+                  <i class='bx bx-cart-download bx-lg'></i> -->
+                  <i class='bx bx-lock-open-alt bx-lg'></i>
+              </a>
+          </div>
+      </div>
+      <nav id="mobile-menu" class="md:hidden hidden">
+          <ul class="flex flex-col space-y-2 p-2">
+              <li><a class="hover:text-gray-300" href="index.html">Tiendas</a></li>
+              <li><a class="hover:text-gray-300" href="productos.html">Productos</a></li>
+              <li><a href="#" class="hover:text-gray-300">Login</a></li>
+          </ul>
+      </nav>
+      
+  </header>
+
+    <main class="flex-grow container mx-auto p-6 text-center mt-4 mt-12">
+      
+      <section>
+        <article >
+          <div class="flex  items-center justify-center m-8 ">
+            <div
+              class="flex w-full flex-col items-center rounded-none bg-gray-50 py-8 shadow-lg shadow-fuchsia-400/20 dark:bg-gray-900 md:w-2/4 md:rounded-lg bg-gradient-to-r from-purple-800 to-purple-600 text-white "
+            >
+            <h2 class="text-3xl font-bold">Login</h2>
+            <form action="" method="get" class=" text-gray-100">
+              <!-- text login -->
+              <div class="mb-20 p-2 m-2 text-gray-100">
+                <div><i class='bx bx-user-circle bx-lg'></i></div>
+                <h1
+                  class="text-center text-2xl font-bold text-gray-600 dark:text-white">                         
+                </h1>
+                <!-- <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="avatar"> -->
+                <i class='bx bx-user-circle'></i>
+                <span class="">  Crear nueva cuenta <a class="hover:text-blue-600" href="registro.html"><span class=" hover:text-yellow-600 ">Registrese</span></a>
+              </div>
+              <!-- email input -->
+              <div class="mb-6 mt-1 w-3/1">
+                <div class="flex items-center">
+                  <input
+                    class="-mr-7 h-12 w-full text-gray-600 rounded-full border-2 border-gray-200 px-2 py-4 outline-fuchsia-400 placeholder:font-semibold hover:ring-1 dark:border-gray-800 dark:bg-gray-700 dark:text-pink-300 -mt-14"
+                    placeholder="Correo electrónico"
+                    type="email"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6 dark:text-red text-gray-600 -mt-12"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <!-- password input -->
+              <div class="mb-6 w-3/2">
+                <div class="flex items-center">
+                  <input
+                    class="-mr-7 h-12 w-full rounded-full border-2 border-gray-200 px-4 py-4 outline-fuchsia-200 placeholder:font-semibold hover:ring-1 dark:border-gray-800 dark:bg-gray-700 dark:text-white text-gray-600"
+                    placeholder="Contraseña"
+                    type="password"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6 dark:text-white text-gray-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <!-- button -->
+              <div class="mt-4 w-3/2">
+                <button 
+                  type="submit"
+                  class="w-full rounded-full bg-fuchsia-200 py-4 font-bold text-fuchsia-500 hover:bg-fuchsia-100 hover:text-yellow-400"
+                >Login
+                 
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        </article>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gradient-to-r from-purple-800 to-purple-600 text-white text-center p-4"
+    >
+      <h2>El footer</h2>
+    </footer>
+  </body>
+</html>
